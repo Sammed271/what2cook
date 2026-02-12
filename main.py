@@ -40,7 +40,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 # Database setup (SQLite)
 # -----------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = BASE_DIR / "auth.db"
+DB_PATH = BASE_DIR / "/tmp/auth.db"
 
 
 def get_db_connection() -> sqlite3.Connection:
