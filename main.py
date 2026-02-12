@@ -177,7 +177,12 @@ app = FastAPI(title="FastAPI JWT Auth for Flutter")
 # Allow Flutter apps during development (adjust origins in production).
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:8000",  # Local dev
+        "http://10.0.2.2:8000",   # Android emulator
+        "http://localhost:8080",  # iOS simulator
+        # Add your Flutter web domain if deployed on web
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
