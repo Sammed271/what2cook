@@ -188,6 +188,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def health_check():
+    return {"status": "alive", "service": "FastAPI Auth"}
 
 @app.on_event("startup")
 def on_startup() -> None:
